@@ -1,0 +1,23 @@
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F8F8; /* Light background */
+            color: #333;
+        }
+        /* Custom scroll-behavior for smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom styles for image hover effect in projects */
+        .project-image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem; /* rounded-xl */
+        }
+        .project-image {
+            transition: transform 0.3s ease-in-out;
+        }
+        .project-image-container:hover .project-image {
+            transform: scale(1.05);
+        }
+    </style>

@@ -1,23 +1,124 @@
-<style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F8F8F8; /* Light background */
-            color: #333;
-        }
-        /* Custom scroll-behavior for smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-        /* Custom styles for image hover effect in projects */
-        .project-image-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 0.75rem; /* rounded-xl */
-        }
-        .project-image {
-            transition: transform 0.3s ease-in-out;
-        }
-        .project-image-container:hover .project-image {
-            transform: scale(1.05);
-        }
-    </style>
+/* Basic body styling to center the calculator on the page */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+/* Styles for the main calculator container */
+.calculator {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 320px; /* Fixed width for consistent layout */
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* Container for the two display screens */
+.calculator-display-container {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: right;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Styling for the top display, showing the full expression */
+.calculator-expression {
+    font-size: 1.2em;
+    height: 1.2em;
+    color: #bbb;
+    min-height: 1.2em; /* Ensures the space is always there */
+}
+
+/* Styling for the bottom display, showing the result or current number */
+.calculator-result {
+    font-size: 3em;
+    height: 1.2em;
+    margin-top: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; /* Adds "..." if the result is too long */
+}
+
+/* Styles for the button grid layout */
+.calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 equally sized columns */
+    gap: 1px;
+    background-color: #ccc; /* A background color to create the grid lines */
+}
+
+/* Default button styling */
+.calculator-keys button {
+    padding: 20px;
+    font-size: 1.5em;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.2s; /* Smooth color transition on hover */
+}
+
+/* Hover effect for buttons */
+.calculator-keys button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Styles for operator buttons (like +, -, *, /, %) */
+.key--operator,
+.key--delete,
+.key--percent {
+    background-color: #f7941d;
+    color: #fff;
+}
+
+/* Hover effect for operator buttons */
+.key--operator:hover,
+.key--delete:hover,
+.key--percent:hover {
+    background-color: #e68a00;
+}
+
+/* Styles for the clear (AC) button */
+.key--clear {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+/* Hover effect for the clear button */
+.key--clear:hover {
+    background-color: #c9302c;
+}
+
+/* Styles for the equals button */
+.key--equal {
+    background-color: #4CAF50;
+    color: #fff;
+    grid-column: span 2; /* Makes the button span across two columns */
+}
+
+/* Hover effect for the equals button */
+.key--equal:hover {
+    background-color: #45a049;
+}
+
+/* Ensure the zero button takes up one column in the new layout */
+.key--zero {
+    grid-column: span 1;
+}
+
+/* Styles for the decimal point button */
+.key--decimal {
+    background-color: #e0e0e0;
+}
+
+/* Hover effect for the decimal button */
+.key--decimal:hover {
+    background-color: #d0d0d0;
+}
+
